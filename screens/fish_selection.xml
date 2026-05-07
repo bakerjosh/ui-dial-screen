@@ -27,14 +27,7 @@
 			text_color="0xffffff"
 			text_font="geist_semibold_28"
 		/>
-		<style
-			name="fish_crop"
-			width="100%"
-			height="100%"
-			bg_opa="0"
-			border_width="0"
-			pad_all="0"
-		/>
+		<style name="fish_crop" width="100%" height="100%" bg_opa="0" border_width="0" pad_all="0" />
 		<style
 			name="controls_row"
 			width="100%"
