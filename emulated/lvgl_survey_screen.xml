@@ -1,0 +1,130 @@
+<screen>
+	<styles>
+		<style
+			name="screen_bg"
+			bg_color="0x000000"
+			bg_opa="100%"
+			pad_all="34"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_cross_place="center"
+			text_color="0xffffff"
+		/>
+		<style name="muted_text" text_color="0xc8f8ff" text_opa="80%" text_font="geist_semibold_12" />
+		<style name="title_text" text_color="0xffffff" text_font="geist_semibold_28" />
+		<style name="option_muted" text_color="0xffffff" text_opa="45%" text_font="geist_bold_16" />
+		<style
+			name="option_selected"
+			width="100%"
+			height="178"
+			bg_color="0x000000"
+			bg_opa="100%"
+			border_color="0x00fff0"
+			border_width="2"
+			radius="8"
+			pad_all="0"
+			text_color="0xffffff"
+			text_font="geist_semibold_28"
+		/>
+		<style
+			name="fish_crop"
+			width="100%"
+			height="100%"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
+			clip_corner="true"
+		/>
+		<style
+			name="controls_row"
+			width="100%"
+			height="content"
+			layout="flex"
+			flex_flow="row"
+			flex_main_place="space_between"
+			flex_cross_place="center"
+			pad_top="10"
+		/>
+		<style
+			name="control_button"
+			width="92"
+			height="44"
+			bg_color="0x0e0e0e"
+			bg_opa="100%"
+			border_color="0xffffff"
+			border_opa="35%"
+			border_width="1"
+			radius="8"
+			text_color="0xffffff"
+			text_font="geist_bold_16"
+		/>
+		<style
+			name="confirm_button"
+			width="112"
+			height="44"
+			bg_color="0x00fff0"
+			bg_opa="100%"
+			border_width="0"
+			radius="8"
+			text_color="0x000000"
+			text_font="geist_bold_16"
+		/>
+	</styles>
+
+	<view name="survey_question_screen">
+		<style name="screen_bg" />
+
+		<lv_label name="question_progress" text="Question 4 / 5">
+			<style name="muted_text" />
+		</lv_label>
+
+		<lv_label name="question_title" text="Fish type" align="center">
+			<style name="title_text" />
+		</lv_label>
+
+		<lv_label name="previous_option" text="Tetra" align="center">
+			<style name="option_muted" />
+		</lv_label>
+
+		<lv_button name="selected_option">
+			<remove_style_all />
+			<style name="option_selected" />
+			<view name="selected_fish_crop">
+				<remove_style_all />
+				<style name="fish_crop" />
+				<lv_image name="selected_fish_image" src="betta_right_frame_01" align="center" x="-154" y="-24" />
+			</view>
+		</lv_button>
+
+		<lv_label name="next_option" text="Gourami" align="center">
+			<style name="option_muted" />
+		</lv_label>
+
+		<lv_label name="option_index" text="Betta">
+			<style name="muted_text" />
+		</lv_label>
+
+		<view name="survey_controls">
+			<style name="controls_row" />
+
+			<lv_button name="previous_button">
+				<remove_style_all />
+				<style name="control_button" />
+				<lv_label text="Prev" align="center" />
+			</lv_button>
+
+			<lv_button name="confirm_button">
+				<remove_style_all />
+				<style name="confirm_button" />
+				<lv_label text="OK" align="center" />
+			</lv_button>
+
+			<lv_button name="next_button">
+				<remove_style_all />
+				<style name="control_button" />
+				<lv_label text="Next" align="center" />
+			</lv_button>
+		</view>
+	</view>
+</screen>

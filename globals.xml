@@ -84,6 +84,7 @@
 		<file name="icon_sunny" figma_node_id="91:43" src_path="images/icon_sunny.png" />
 		<file name="icon_pin" figma_node_id="25:65" src_path="images/icon_pin.png" />
 		<file name="icon_theme" figma_node_id="15:28" src_path="images/icon_theme.png" />
+		<file name="betta_right_frame_01" src_path="images/fish/betta/right/frame-01.png" />
 	</images>
 
 	<fonts>
