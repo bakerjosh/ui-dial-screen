@@ -24,18 +24,18 @@
 			flex_cross_place="center"
 			pad_row="8"
 		/>
-		<style name="round_screen_outline" width="480" height="480" bg_opa="0" border_color="0xffffff" border_opa="28%" border_width="2" radius="240" pad_all="0" />
-		<style name="round_safe_outline" width="432" height="432" x="24" y="24" bg_opa="0" border_color="0xffffff" border_opa="16%" border_width="1" radius="216" pad_all="0" />
-		<style name="eyebrow_text" width="344" text_color="0x00fff0" text_font="geist_semibold_12" text_align="center" text_letter_space="1" />
+		<style name="round_screen_outline" width="480" height="480" bg_opa="0" border_color="0xffffff" border_opa="6%" border_width="1" radius="240" pad_all="0" />
+		<style name="round_safe_outline" width="432" height="432" x="24" y="24" bg_opa="0" border_color="0xffffff" border_opa="4%" border_width="1" radius="216" pad_all="0" />
+		<style name="eyebrow_text" width="344" text_color="0x00fff0" text_opa="90%" text_font="geist_semibold_12" text_align="center" text_letter_space="1" />
 		<style name="title_text" width="344" text_color="0xffffff" text_font="geist_semibold_28" text_align="center" />
-		<style name="body_text" width="314" text_color="0xa8b2b8" text_opa="90%" text_font="geist_regular_14" text_align="center" text_line_space="2" />
-		<style name="muted_option" width="258" text_color="0xffffff" text_opa="45%" text_font="geist_bold_16" text_align="center" />
-		<style name="selected_panel" width="258" height="76" bg_color="0x050707" bg_opa="100%" border_color="0x00fff0" border_width="2" radius="10" pad_all="6" layout="flex" flex_flow="column" flex_main_place="center" flex_cross_place="center" />
-		<style name="selected_text" width="234" text_color="0xffffff" text_font="geist_semibold_28" text_align="center" />
+		<style name="body_text" width="300" text_color="0xc8f8ff" text_opa="62%" text_font="geist_regular_14" text_align="center" text_line_space="2" />
+		<style name="muted_option" width="160" text_color="0xc8f8ff" text_opa="42%" text_font="geist_bold_16" text_align="center" />
+		<style name="selected_panel" width="118" height="90" bg_opa="0" border_color="0x00fff0" border_opa="92%" border_width="3" radius="16" pad_all="4" layout="flex" flex_flow="column" flex_main_place="center" flex_cross_place="center" />
+		<style name="selected_text" width="104" text_color="0xffffff" text_font="geist_light_60" text_align="center" />
 		<style name="progress_text" width="344" text_color="0xc8f8ff" text_opa="85%" text_font="geist_semibold_12" text_align="center" />
-		<style name="controls_row" width="302" height="38" bg_opa="0" border_width="0" pad_all="0" layout="flex" flex_flow="row" flex_main_place="space_between" flex_cross_place="center" />
-		<style name="control_button" width="82" height="38" bg_color="0x000000" bg_opa="100%" border_color="0x054642" border_width="1" radius="8" text_color="0xffffff" text_font="geist_bold_16" />
-		<style name="ok_button" width="102" height="38" bg_color="0x000000" bg_opa="100%" border_color="0x054642" border_width="1" radius="8" text_color="0xffffff" text_font="geist_bold_16" />
+		<style name="controls_row" width="248" height="38" bg_opa="0" border_width="0" pad_all="0" layout="flex" flex_flow="row" flex_main_place="space_between" flex_cross_place="center" />
+		<style name="control_button" width="62" height="38" bg_opa="0" border_width="0" radius="8" text_color="0xc8f8ff" text_opa="55%" text_font="geist_bold_16" />
+		<style name="ok_button" width="64" height="38" bg_opa="0" border_width="0" radius="8" text_color="0x00fff0" text_font="geist_bold_16" />
 	</styles>
 
 	<view name="fish_selection_screen">

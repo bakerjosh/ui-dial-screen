@@ -93,7 +93,7 @@ button {
   position: absolute;
   inset: 24px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
 
@@ -186,7 +186,7 @@ button {
 
 .dial-picker {
   position: relative;
-  width: min(100%, 330px);
+  width: min(100%, 190px);
   min-height: 194px;
   margin: 0 auto;
   display: grid;
@@ -225,20 +225,22 @@ button {
 .dial-option-next {
   min-height: 40px;
   padding-inline: 18px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(200, 248, 255, 0.42);
   font-size: 0.9rem;
   transform: scale(0.94);
 }
 
 .dial-option-selected {
-  min-height: 76px;
-  padding: 12px 18px;
+  min-height: 90px;
+  width: 118px;
+  margin: 0 auto;
+  padding: 10px 14px;
   color: #ffffff;
-  border: 2px solid var(--accent);
-  border-radius: 10px;
-  background: #050707;
+  border: 3px solid var(--accent);
+  border-radius: 16px;
+  background: transparent;
   box-shadow: none;
-  font-size: 2.15rem;
+  font-size: 3.6rem;
   font-weight: 780;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.34);
 }
@@ -332,6 +334,12 @@ button {
     border-color 140ms ease,
     color 140ms ease,
     transform 140ms ease;
+}
+
+.control-button,
+.survey-control,
+button {
+  background: transparent;
 }
 
 .reset-button:hover,
