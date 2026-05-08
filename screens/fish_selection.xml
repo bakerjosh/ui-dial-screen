@@ -2,66 +2,190 @@
 	<styles>
 		<style
 			name="screen_bg"
+			width="480"
+			height="480"
 			bg_color="0x000000"
 			bg_opa="100%"
-			text_color="0xffffff"
-			pad_all="34"
+			border_width="0"
+			pad_all="0"
 		/>
-		<style name="muted_text" text_color="0xc8f8ff" text_opa="80%" text_font="geist_semibold_12" />
-		<style name="title_text" text_color="0xffffff" text_font="geist_semibold_28" />
-		<style name="option_text" text_color="0xffffff" text_font="geist_bold_16" />
 		<style
-			name="selected_option"
-			width="100%"
-			height="86"
-			bg_color="0x0e0e0e"
+			name="safe_column"
+			width="344"
+			height="402"
+			x="68"
+			y="42"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_cross_place="center"
+			pad_row="8"
+		/>
+		<style
+			name="eyebrow_text"
+			width="344"
+			text_color="0x00fff0"
+			text_font="geist_semibold_12"
+			text_align="center"
+			text_letter_space="1"
+		/>
+		<style
+			name="title_text"
+			width="344"
+			text_color="0xffffff"
+			text_font="geist_semibold_28"
+			text_align="center"
+		/>
+		<style
+			name="body_text"
+			width="314"
+			text_color="0xa8b2b8"
+			text_opa="90%"
+			text_font="geist_regular_14"
+			text_align="center"
+			text_line_space="2"
+		/>
+		<style
+			name="muted_option"
+			width="258"
+			text_color="0xffffff"
+			text_opa="45%"
+			text_font="geist_bold_16"
+			text_align="center"
+		/>
+		<style
+			name="selected_panel"
+			width="258"
+			height="76"
+			bg_color="0x050707"
 			bg_opa="100%"
 			border_color="0x00fff0"
 			border_width="2"
-			radius="8"
-			pad_all="18"
+			radius="10"
+			pad_all="6"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_cross_place="center"
+		/>
+		<style
+			name="selected_text"
+			width="234"
 			text_color="0xffffff"
+			text_font="geist_semibold_28"
+			text_align="center"
+		/>
+		<style
+			name="progress_text"
+			width="344"
+			text_color="0xc8f8ff"
+			text_opa="85%"
+			text_font="geist_semibold_12"
+			text_align="center"
+		/>
+		<style
+			name="controls_row"
+			width="302"
+			height="38"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
+			layout="flex"
+			flex_flow="row"
+			flex_main_place="space_between"
+			flex_cross_place="center"
+		/>
+		<style
+			name="control_button"
+			width="82"
+			height="38"
+			bg_color="0x000000"
+			bg_opa="100%"
+			border_color="0x054642"
+			border_width="1"
+			radius="8"
+			text_color="0xffffff"
+			text_font="geist_bold_16"
+		/>
+		<style
+			name="ok_button"
+			width="102"
+			height="38"
+			bg_color="0x000000"
+			bg_opa="100%"
+			border_color="0x054642"
+			border_width="1"
+			radius="8"
+			text_color="0xffffff"
+			text_font="geist_bold_16"
 		/>
 	</styles>
 
-	<view flex_flow="column" style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="14">
+	<view name="fish_selection_screen">
 		<style name="screen_bg" />
 
-		<lv_label text="Question 1 / 5" align="center">
-			<style name="muted_text" />
-		</lv_label>
+		<view name="survey_safe_area">
+			<style name="safe_column" />
 
-		<lv_label text="Innovation" align="center">
-			<style name="title_text" />
-		</lv_label>
-
-		<lv_label text="How innovative did this feel?" align="center">
-			<style name="muted_text" />
-		</lv_label>
-
-		<lv_label text="2" align="center">
-			<style name="muted_text" />
-		</lv_label>
-
-		<div style_flex_cross_place="center">
-			<style name="selected_option" />
-			<lv_label text="3" align="center">
-				<style name="option_text" />
+			<lv_label name="question_count" text="Question 1 / 5">
+				<style name="eyebrow_text" />
 			</lv_label>
-		</div>
 
-		<lv_label text="4" align="center">
-			<style name="muted_text" />
-		</lv_label>
+			<lv_label name="question_title" text="Overall Comparison">
+				<style name="title_text" />
+			</lv_label>
 
-		<lv_label text="3 of 5" align="center">
-			<style name="muted_text" />
-		</lv_label>
+			<lv_label
+				name="question_body"
+				text="Think back to the last events you attended from other laboratories, especially in the same area. On a scale of 1 to 5, how would you rate this TCD event compared to those from other colleges?"
+				long_mode="wrap"
+			>
+				<style name="body_text" />
+			</lv_label>
 
-		<row width="100%" style_flex_main_place="space_between" style_flex_cross_place="center" style_pad_top="8">
-			<button label="Prev" width="92" />
-			<button label="OK" width="112" />
-			<button label="Next" width="92" />
-		</row>
+			<lv_label name="previous_option" text="2">
+				<style name="muted_option" />
+			</lv_label>
+
+			<view name="selected_option">
+				<style name="selected_panel" />
+				<lv_label name="selected_option_label" text="3" long_mode="wrap">
+					<style name="selected_text" />
+				</lv_label>
+			</view>
+
+			<lv_label name="next_option" text="4">
+				<style name="muted_option" />
+			</lv_label>
+
+			<lv_label name="option_progress" text="3 of 5">
+				<style name="progress_text" />
+			</lv_label>
+
+			<row name="survey_controls">
+				<style name="controls_row" />
+
+				<lv_button name="previous_button">
+					<remove_style_all />
+					<style name="control_button" />
+					<lv_label text="Prev" align="center" />
+				</lv_button>
+
+				<lv_button name="confirm_button">
+					<remove_style_all />
+					<style name="ok_button" />
+					<lv_label text="OK" align="center" />
+				</lv_button>
+
+				<lv_button name="next_button">
+					<remove_style_all />
+					<style name="control_button" />
+					<lv_label text="Next" align="center" />
+				</lv_button>
+			</row>
+		</view>
 	</view>
 </screen>

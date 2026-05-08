@@ -2,128 +2,60 @@
 	<styles>
 		<style
 			name="screen_bg"
+			width="480"
+			height="480"
 			bg_color="0x000000"
 			bg_opa="100%"
-			pad_all="34"
+			border_width="0"
+			pad_all="0"
+		/>
+		<style
+			name="safe_column"
+			width="344"
+			height="402"
+			x="68"
+			y="42"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
 			layout="flex"
 			flex_flow="column"
 			flex_main_place="center"
 			flex_cross_place="center"
-			text_color="0xffffff"
+			pad_row="8"
 		/>
-		<style name="muted_text" text_color="0xc8f8ff" text_opa="80%" text_font="geist_semibold_12" />
-		<style name="title_text" text_color="0xffffff" text_font="geist_semibold_28" />
-		<style name="option_muted" text_color="0xffffff" text_opa="45%" text_font="geist_bold_16" />
-		<style
-			name="option_selected"
-			width="100%"
-			height="178"
-			bg_color="0x000000"
-			bg_opa="100%"
-			border_color="0x00fff0"
-			border_width="2"
-			radius="8"
-			pad_all="0"
-			text_color="0xffffff"
-			text_font="geist_semibold_28"
-		/>
-		<style
-			name="fish_crop"
-			width="100%"
-			height="100%"
-			bg_opa="0"
-			border_width="0"
-			pad_all="0"
-		/>
-		<style
-			name="controls_row"
-			width="100%"
-			height="content"
-			layout="flex"
-			flex_flow="row"
-			flex_main_place="space_between"
-			flex_cross_place="center"
-			pad_top="10"
-		/>
-		<style
-			name="control_button"
-			width="92"
-			height="44"
-			bg_color="0x0e0e0e"
-			bg_opa="100%"
-			border_color="0xffffff"
-			border_opa="35%"
-			border_width="1"
-			radius="8"
-			text_color="0xffffff"
-			text_font="geist_bold_16"
-		/>
-		<style
-			name="confirm_button_style"
-			width="112"
-			height="44"
-			bg_color="0x00fff0"
-			bg_opa="100%"
-			border_width="0"
-			radius="8"
-			text_color="0x000000"
-			text_font="geist_bold_16"
-		/>
+		<style name="eyebrow_text" width="344" text_color="0x00fff0" text_font="geist_semibold_12" text_align="center" text_letter_space="1" />
+		<style name="title_text" width="344" text_color="0xffffff" text_font="geist_semibold_28" text_align="center" />
+		<style name="body_text" width="314" text_color="0xa8b2b8" text_opa="90%" text_font="geist_regular_14" text_align="center" text_line_space="2" />
+		<style name="muted_option" width="258" text_color="0xffffff" text_opa="45%" text_font="geist_bold_16" text_align="center" />
+		<style name="selected_panel" width="258" height="76" bg_color="0x050707" bg_opa="100%" border_color="0x00fff0" border_width="2" radius="10" pad_all="6" layout="flex" flex_flow="column" flex_main_place="center" flex_cross_place="center" />
+		<style name="selected_text" width="234" text_color="0xffffff" text_font="geist_semibold_28" text_align="center" />
+		<style name="progress_text" width="344" text_color="0xc8f8ff" text_opa="85%" text_font="geist_semibold_12" text_align="center" />
+		<style name="controls_row" width="302" height="38" bg_opa="0" border_width="0" pad_all="0" layout="flex" flex_flow="row" flex_main_place="space_between" flex_cross_place="center" />
+		<style name="control_button" width="82" height="38" bg_color="0x000000" bg_opa="100%" border_color="0x054642" border_width="1" radius="8" text_color="0xffffff" text_font="geist_bold_16" />
+		<style name="ok_button" width="102" height="38" bg_color="0x000000" bg_opa="100%" border_color="0x054642" border_width="1" radius="8" text_color="0xffffff" text_font="geist_bold_16" />
 	</styles>
 
-	<view>
+	<view name="fish_selection_screen">
 		<style name="screen_bg" />
-
-		<lv_label name="question_progress" text="Question 4 / 5">
-			<style name="muted_text" />
-		</lv_label>
-
-		<lv_label name="question_title" text="Fish type" align="center">
-			<style name="title_text" />
-		</lv_label>
-
-		<lv_label name="previous_option" text="Tetra" align="center">
-			<style name="option_muted" />
-		</lv_label>
-
-		<lv_button name="selected_option">
-			<remove_style_all />
-			<style name="option_selected" />
-			<view>
-				<remove_style_all />
-				<style name="fish_crop" />
-				<lv_image name="selected_fish_image" src="betta_right_frame_01" align="center" x="-154" y="-24" />
+		<view name="survey_safe_area">
+			<style name="safe_column" />
+			<lv_label name="question_count" text="Question 1 / 5"><style name="eyebrow_text" /></lv_label>
+			<lv_label name="question_title" text="Overall Comparison"><style name="title_text" /></lv_label>
+			<lv_label name="question_body" text="Think back to the last events you attended from other laboratories, especially in the same area. On a scale of 1 to 5, how would you rate this TCD event compared to those from other colleges?" long_mode="wrap"><style name="body_text" /></lv_label>
+			<lv_label name="previous_option" text="2"><style name="muted_option" /></lv_label>
+			<view name="selected_option">
+				<style name="selected_panel" />
+				<lv_label name="selected_option_label" text="3" long_mode="wrap"><style name="selected_text" /></lv_label>
 			</view>
-		</lv_button>
-
-		<lv_label name="next_option" text="Gourami" align="center">
-			<style name="option_muted" />
-		</lv_label>
-
-		<lv_label name="option_index" text="Betta">
-			<style name="muted_text" />
-		</lv_label>
-
-		<row name="survey_controls">
-			<style name="controls_row" />
-
-			<lv_button name="previous_button">
-				<remove_style_all />
-				<style name="control_button" />
-				<lv_label text="Prev" align="center" />
-			</lv_button>
-
-			<lv_button name="confirm_button">
-				<remove_style_all />
-				<style name="confirm_button_style" />
-				<lv_label text="OK" align="center" />
-			</lv_button>
-
-			<lv_button name="next_button">
-				<remove_style_all />
-				<style name="control_button" />
-				<lv_label text="Next" align="center" />
-			</lv_button>
-		</row>
+			<lv_label name="next_option" text="4"><style name="muted_option" /></lv_label>
+			<lv_label name="option_progress" text="3 of 5"><style name="progress_text" /></lv_label>
+			<row name="survey_controls">
+				<style name="controls_row" />
+				<lv_button name="previous_button"><remove_style_all /><style name="control_button" /><lv_label text="Prev" align="center" /></lv_button>
+				<lv_button name="confirm_button"><remove_style_all /><style name="ok_button" /><lv_label text="OK" align="center" /></lv_button>
+				<lv_button name="next_button"><remove_style_all /><style name="control_button" /><lv_label text="Next" align="center" /></lv_button>
+			</row>
+		</view>
 	</view>
 </screen>

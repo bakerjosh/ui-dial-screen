@@ -9,95 +9,41 @@
     COMPLETE: "complete"
   };
 
-  const fishTypeOptions = [
-    {
-      value: "betta",
-      label: "Betta",
-      image: "../../assets/sprites/betta-1.png",
-      offset: { x: -7, y: -12 }
-    },
-    {
-      value: "tetra",
-      label: "Tetra",
-      image: "../../assets/sprites/tetra-1.png",
-      offset: { x: -3, y: -8 }
-    },
-    {
-      value: "gourami",
-      label: "Gourami",
-      image: "../../assets/sprites/gourami-1.png",
-      offset: { x: -4, y: -9 }
-    },
-    {
-      value: "shark",
-      label: "Shark",
-      image: "../../assets/sprites/shark-1.png",
-      frame: { col: 0, row: 1 },
-      offset: { x: -5, y: -7 }
-    }
-  ];
-
-  const fishColourOptionsByType = {
-    betta: [
-      makeFishVariantOption("betta1", "Betta 1"),
-      makeFishVariantOption("betta2", "Betta 2"),
-      makeFishVariantOption("betta3", "Betta 3"),
-      makeFishVariantOption("betta4", "Betta 4"),
-      makeFishVariantOption("betta5", "Betta 5")
-    ],
-    tetra: [
-      makeFishVariantOption("tetra1", "Tetra 1"),
-      makeFishVariantOption("tetra2", "Tetra 2"),
-      makeFishVariantOption("tetra3", "Tetra 3"),
-      makeFishVariantOption("tetra4", "Tetra 4"),
-      makeFishVariantOption("tetra5", "Tetra 5"),
-      makeFishVariantOption("tetra6", "Tetra 6")
-    ],
-    gourami: [
-      makeFishVariantOption("gourami1", "Gourami 1"),
-      makeFishVariantOption("gourami2", "Gourami 2"),
-      makeFishVariantOption("gourami3", "Gourami 3"),
-      makeFishVariantOption("gourami4", "Gourami 4"),
-      makeFishVariantOption("gourami5", "Gourami 5"),
-      makeFishVariantOption("gourami6", "Gourami 6")
-    ],
-    shark: [
-      makeFishVariantOption("shark1", "Shark", { col: 0, row: 1 })
-    ]
-  };
-
   const questions = [
     {
-      id: "innovation",
-      title: "Innovation",
+      id: "overall_comparison",
+      title: "Overall Comparison",
+      body: "Think back to the last events you attended from other laboratories, especially in the same area. On a scale of 1 to 5, how would you rate this TCD event compared to those from other colleges?",
       options: ["1", "2", "3", "4", "5"],
       mapAnswer: Number
     },
     {
-      id: "satisfaction",
-      title: "Satisfaction",
-      options: ["Very dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very satisfied"],
-      mapAnswer: String
+      id: "organisation",
+      title: "Organisation",
+      body: "Think about recent events you attended with other laboratories. How does your experience with TCD compare to theirs for organisation during the event?",
+      options: ["1", "2", "3", "4", "5"],
+      mapAnswer: Number
     },
     {
-      id: "recommend",
-      title: "Recommend",
+      id: "recommendation",
+      title: "Recommendation",
+      body: "How likely are you to recommend a similar session to a colleague?",
       options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
       mapAnswer: Number
     },
     {
       id: "fish_type",
-      title: "Fish type",
-      options: fishTypeOptions,
-      imageOnly: true,
-      mapAnswer: getOptionValue
+      title: "Fish Type",
+      body: "Choose a fish to add to the shared aquarium.",
+      options: ["Betta", "Tetra", "Gourami", "Shark", "Crab"],
+      mapAnswer: String
     },
     {
       id: "fish_colour",
-      title: "Fish colour",
-      getOptions: getFishColourOptions,
-      imageOnly: true,
-      mapAnswer: getOptionValue
+      title: "Fish Colour",
+      body: "Choose the colour of your fish.",
+      options: ["Cyan", "Blue", "Purple", "Green", "Orange", "Red", "White"],
+      mapAnswer: String
     }
   ];
 
@@ -226,9 +172,9 @@
       submission_id: makeSubmissionId(),
       timestamp: new Date().toISOString(),
       answers: {
-        innovation: state.answers.innovation,
-        satisfaction: state.answers.satisfaction,
-        recommend: state.answers.recommend,
+        overall_comparison: state.answers.overall_comparison,
+        organisation: state.answers.organisation,
+        recommendation: state.answers.recommendation,
         fish_type: state.answers.fish_type,
         fish_colour: state.answers.fish_colour
       }
@@ -250,11 +196,6 @@
     }
 
     return question.options;
-  }
-
-  function getFishColourOptions() {
-    const fishType = state.answers.fish_type || "betta";
-    return fishColourOptionsByType[fishType] || fishColourOptionsByType.betta;
   }
 
   function resetFishColourSelection() {
@@ -294,7 +235,8 @@
   function renderStartScreen() {
     return [
       '<div class="screen">',
-      '  <h1 class="title">Feedback device</h1>',
+      '  <h1 class="title">Feedback Device</h1>',
+      '  <p class="copy">Turn the dial to choose. Press to begin.</p>',
       "</div>"
     ].join("");
   }
@@ -316,6 +258,9 @@
       '  <h2 class="question-title">',
       escapeHtml(question.title),
       "</h2>",
+      '  <p class="copy question-copy">',
+      escapeHtml(question.body),
+      "</p>",
       '  <div class="dial-picker" role="listbox" aria-label="Selected value">',
       optionMarkup,
       "  </div>",
@@ -388,38 +333,6 @@
       '" alt="" />' +
       "</span>"
     );
-  }
-
-  function makeFishVariantOption(variant, label, frame) {
-    const species = getVariantSpecies(variant);
-
-    return {
-      value: variant,
-      label,
-      image: "../../assets/sprites/" + getSpriteFilename(variant),
-      frame: frame || { col: 0, row: 0 },
-      offset: getVariantOffset(species)
-    };
-  }
-
-  function getSpriteFilename(variant) {
-    return String(variant).replace(/([a-z]+)(\d+)/, "$1-$2") + ".png";
-  }
-
-  function getVariantSpecies(variant) {
-    const match = String(variant).match(/^(betta|tetra|gourami|shark)/);
-    return match ? match[1] : "betta";
-  }
-
-  function getVariantOffset(species) {
-    const offsets = {
-      betta: { x: -7, y: -12 },
-      tetra: { x: -3, y: -8 },
-      gourami: { x: -4, y: -9 },
-      shark: { x: -5, y: -7 }
-    };
-
-    return offsets[species] || { x: 0, y: 0 };
   }
 
   function getOptionValue(option) {
