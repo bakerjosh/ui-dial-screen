@@ -1,11 +1,11 @@
 <screen>
 	<styles>
-		<style name="screen_bg" bg_color="0x000000" bg_opa="100%" border_color="0xffffff" border_opa="6%" border_width="1" radius="240" text_color="0xffffff" pad_all="42" />
+		<style name="screen_bg" width="480" height="480" bg_color="0x000000" bg_opa="100%" border_color="0xffffff" border_opa="6%" border_width="1" radius="240" text_color="0xffffff" pad_all="28" />
 		<style name="eyebrow_text" text_color="0x00fff0" text_opa="90%" text_font="geist_semibold_12" />
 		<style name="title_text" text_color="0xffffff" text_font="geist_semibold_28" />
-		<style name="body_text" width="300" text_color="0xc8f8ff" text_opa="62%" text_font="geist_regular_14" text_align="center" text_line_space="2" />
+		<style name="body_text" width="292" text_color="0xc8f8ff" text_opa="58%" text_font="geist_regular_12" text_align="center" text_line_space="1" />
 		<style name="muted_option" width="160" text_color="0xc8f8ff" text_opa="42%" text_font="geist_bold_16" text_align="center" />
-		<style name="selected_option" width="118" height="90" bg_opa="0" border_color="0x00fff0" border_opa="92%" border_width="3" radius="16" pad_all="4" text_color="0xffffff" />
+		<style name="selected_option" width="118" height="84" bg_opa="0" border_color="0x00fff0" border_opa="92%" border_width="3" radius="16" pad_all="4" text_color="0xffffff" />
 		<style name="selected_text" width="104" text_color="0xffffff" text_font="geist_light_60" text_align="center" />
 		<style name="progress_text" text_color="0xc8f8ff" text_opa="85%" text_font="geist_semibold_12" />
 		<style name="controls_row" width="248" height="content" />
@@ -13,11 +13,11 @@
 		<style name="ok_button" width="64" height="38" bg_opa="0" border_width="0" radius="8" text_color="0x00fff0" text_font="geist_bold_16" />
 	</styles>
 
-	<view flex_flow="column" style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="8">
+	<view flex_flow="column" style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="5" scrollable="false">
 		<style name="screen_bg" />
 		<lv_label text="Question 1 / 5" align="center"><style name="eyebrow_text" /></lv_label>
 		<lv_label text="Overall Comparison" align="center"><style name="title_text" /></lv_label>
-		<lv_label text="Think back to the last events you attended from other laboratories, especially in the same area. On a scale of 1 to 5, how would you rate this TCD event compared to those from other colleges?" align="center" long_mode="wrap"><style name="body_text" /></lv_label>
+		<lv_label text="Rate this TCD event compared with similar lab events from other colleges." align="center" long_mode="wrap"><style name="body_text" /></lv_label>
 		<lv_label text="2" align="center"><style name="muted_option" /></lv_label>
 		<div style_flex_cross_place="center">
 			<style name="selected_option" />
@@ -25,11 +25,11 @@
 		</div>
 		<lv_label text="4" align="center"><style name="muted_option" /></lv_label>
 		<lv_label text="3 of 5" align="center"><style name="progress_text" /></lv_label>
-		<row style_flex_main_place="space_between" style_flex_cross_place="center" style_pad_top="4">
+		<row style_flex_main_place="space_between" style_flex_cross_place="center" style_pad_top="2" scrollable="false">
 			<style name="controls_row" />
-			<button label="Prev" width="62" />
-			<button label="OK" width="64" />
-			<button label="Next" width="62" />
+			<lv_label text="Prev" align="center"><style name="control_button" /></lv_label>
+			<lv_label text="OK" align="center"><style name="ok_button" /></lv_label>
+			<lv_label text="Next" align="center"><style name="control_button" /></lv_label>
 		</row>
 	</view>
 </screen>
