@@ -24,6 +24,8 @@
 			flex_cross_place="center"
 			pad_row="8"
 		/>
+		<style name="round_screen_outline" width="480" height="480" bg_opa="0" border_color="0xffffff" border_opa="28%" border_width="2" radius="240" pad_all="0" />
+		<style name="round_safe_outline" width="432" height="432" x="24" y="24" bg_opa="0" border_color="0xffffff" border_opa="16%" border_width="1" radius="216" pad_all="0" />
 		<style name="eyebrow_text" width="344" text_color="0x00fff0" text_font="geist_semibold_12" text_align="center" text_letter_space="1" />
 		<style name="title_text" width="344" text_color="0xffffff" text_font="geist_semibold_28" text_align="center" />
 		<style name="body_text" width="314" text_color="0xa8b2b8" text_opa="90%" text_font="geist_regular_14" text_align="center" text_line_space="2" />
@@ -38,6 +40,8 @@
 
 	<view name="fish_selection_screen">
 		<style name="screen_bg" />
+		<view name="round_screen_outline"><style name="round_screen_outline" /></view>
+		<view name="round_safe_outline"><style name="round_safe_outline" /></view>
 		<view name="survey_safe_area">
 			<style name="safe_column" />
 			<lv_label name="question_count" text="Question 1 / 5"><style name="eyebrow_text" /></lv_label>
